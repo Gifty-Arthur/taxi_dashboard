@@ -13,7 +13,7 @@ export default function FAQ() {
     },
     {
       icon: <MdTimelapse />,
-      text: "How to regulate transactions over time",
+      text: "How to regulate   s over time",
     },
     {
       icon: <IoMdCash />,
@@ -26,9 +26,9 @@ export default function FAQ() {
         <h2>Information for drivers</h2>
       </div>
       <div className="faqs">
-        {faqs.map((faq) => {
+        {faqs.map((faq, index) => {
           return (
-            <div className="faq">
+            <div className="faq" key={index}>
               <div className="info">
                 {faq.icon}
                 <h4>{faq.text}</h4>

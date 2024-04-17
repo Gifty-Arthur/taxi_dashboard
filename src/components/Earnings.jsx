@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 import { cardStyles } from "./ReusableStyles";
@@ -157,49 +157,44 @@ const data = [
     data: 8000,
   },
 ];
-
 export default function Earnings() {
   return (
     <Section>
-    <div className="top">
-      <div className="info">
-        <h4>This month earnings</h4>
-        <h1>$678</h1>
-        <div className="growth"><span>
-          +2.45</span>
+      <div className="top">
+        <div className="info">
+          <h5>This month earnings</h5>
+          <h1>$682.5</h1>
+          <div className="growth">
+            <span>+2.45%</span>
           </div>
+        </div>
       </div>
-    </div>
-    <div className="chart">
-      <ResponsiveContainer height="100%" width="100%">
-        <AreaChart width={500} 
-        height={400} 
-        data={data}
-         margin={{top:0, left: 0, right: 0, bottom: 0
-        }}
-        >
-          <Tooltip cursor={false} />
-          <Area
-               animationBegin={800}
-               animationDuration={2000}
-               type="monotone"
-               dataKey="data"
-               stroke="#ffc107"
-               fill="#806833e"
-               strokeWidth={4}
-
-          />
-
-        </AreaChart>
-
-      </ResponsiveContainer>
-    </div>
+      <div className="chart">
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
+            width={500}
+            height={400}
+            data={data}
+            margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          >
+            <Tooltip cursor={false} />
+            <Area
+              animationBegin={800}
+              animationDuration={2000}
+              type="monotone"
+              dataKey="data"
+              stroke="#ffc107"
+              fill="#8068233e"
+              strokeWidth={4}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </Section>
-  )
+  );
 }
-
 const Section = styled.section`
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 20rem;
@@ -237,5 +232,7 @@ display: flex;
       background-color: black !important;
       border-color: black !important;
     }
+  }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
   }
 `;
